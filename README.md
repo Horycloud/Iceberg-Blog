@@ -1,14 +1,8 @@
 # Iceberg-Blog
 
-<div align=center><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmwk5ra4xgj30r80r53za.jpg" width="35%" height="35%"></div>
-<div align=center><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmvr52fw1fj306f06ea9y.jpg"></div>
+<div align=center><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmwk5ra4xgj30r80r53za.jpg" width="30%" height="30%"></div>
 
-
-
-<div align=center>[![](https://img.shields.io/badge/JDK-1.8%2B-lightgrey)](https://www.oracle.com/java/technologies/javase-downloads.html)[![](https://img.shields.io/badge/SpringBoot-2.1.0.RELEASE-brightgreen)](https://spring.io/projects/spring-boot)[![](https://img.shields.io/badge/MyBatis-1.3.2-orange)](https://mybatis.org/mybatis-3/)[![](https://img.shields.io/badge/Thymeleaf-3.0.12-success)](https://www.thymeleaf.org/)</div>
-
-
-
+<div align=center>
 
 [![](https://img.shields.io/badge/JDK-1.8%2B-lightgrey)](https://www.oracle.com/java/technologies/javase-downloads.html)
 
@@ -17,6 +11,7 @@
 [![](https://img.shields.io/badge/MyBatis-1.3.2-orange)](https://mybatis.org/mybatis-3/)
 
 [![](https://img.shields.io/badge/Thymeleaf-3.0.12-success)](https://www.thymeleaf.org/)
+</div>
 
 
 
