@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<aside th:fragment="sidebar-fragment(path)" class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a th:href="@{/admin/index}" class="brand-link">
+        <!-- favicon 图标 -->
+        <img th:src="@{/admin/dist/img/iceberg.png}" alt="ssm-cluster Logo" class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <span class="brand-text font-weight-light">ICEBERG BLOG</span>
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <!-- sidebar 头像 -->
+                <img th:src="@{/admin/dist/img/gitHubOlder.jpg}" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block" th:text="${session.loginUser}"></a>
+            </div>
+        </div>
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+<!--                <li class="nav-header">Dashboard</li>-->
+                <li class="nav-item">
+                    <a th:href="@{/admin/index}" th:class="${path}=='index'?'nav-link active':'nav-link'">
+                        <i class="nav-icon fa fa-dashboard"></i>
+                        <p>
+                            DASHBOARD
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <!-- 通过 path 字段来确定是哪个功能模块，并对应地将左侧导航栏上当前模块的 css 样式给修改掉 -->
+                    <!-- 如果当前的 path 字段值为 'edit'，那么“发布博客”这个选项的 css 样式就修改为选中状态 -->
+                    <!-- path 字段的值是在哪里进行赋值的呢？答案是 admin 包下的 TagController 类中 -->
+                    <a th:href="@{/admin/blogs/edit}" th:class="${path}=='edit'?'nav-link active':'nav-link'">
+                        <i class="nav-icon fa fa fa-pencil-square-o"></i>
+                        <p>
+                            PUBLISH   <!-- 发布博客 -->
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-header">MANAGEMENT <!-- 管理模块 --> </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/admin/blogs}" th:class="${path}=='blogs'?'nav-link active':'nav-link'">
+                        <i class="fa fa-list-alt nav-icon" aria-hidden="true"></i>
+                        <p>
+                            BLOGS <!-- 博客管理 -->
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/admin/comments}" th:class="${path}=='comments'?'nav-link active':'nav-link'">
+                        <i class="fa fa-comments nav-icon" aria-hidden="true"></i>
+                        <p>
+                            COMMENTS <!-- 评论管理 -->
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/admin/categories}" th:class="${path}=='categories'?'nav-link active':'nav-link'">
+                        <i class="fa fa-bookmark nav-icon" aria-hidden="true"></i>
+                        <p>
+                            CATEGORIES <!-- 分类管理 -->
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <!-- 当点击此标签，向后端发送路径为/admin/tags的请求，即调用controller.admin.TagController中的tagPage方法-->
+                    <!-- tagPage方法一方面对 ${path} 赋值为 tags，之后判断生效，执行后面的'nav-link active' 将 css 样式修改为选中状态-->
+                    <!-- 另一方面，返回 admin/tag.html -->
+                    <a th:href="@{/admin/tags}" th:class="${path}=='tags'?'nav-link active':'nav-link'">
+                        <i class="fa fa-tags nav-icon" aria-hidden="true"></i>
+                        <p>
+                            TAGS <!-- 标签管理 -->
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/admin/links}" th:class="${path}=='links'?'nav-link active':'nav-link'">
+                        <i class="fa fa-heart nav-icon" aria-hidden="true"></i>
+                        <p>
+                            LINKS <!-- 友情链接 -->
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-header">SYSTEM <!-- 系统管理 --></li>
+                <li class="nav-item">
+                    <a th:href="@{/admin/configurations}"
+                       th:class="${path}=='configurations'?'nav-link active':'nav-link'">
+                        <i class="fa fa-wrench nav-icon"></i>
+                        <p>CONFIGURATION <!-- 系统配置 --></p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/admin/profile}"
+                       th:class="${path}=='profile'?'nav-link active':'nav-link'">
+                        <i class="fa fa-user-secret nav-icon"></i>
+                        <p>PASSWORD <!-- 修改密码 --></p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/admin/logout}" class="nav-link">
+                        <i class="fa fa-sign-out nav-icon"></i>
+                        <p>EXIT <!-- 安全退出 --></p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>
+</html>
